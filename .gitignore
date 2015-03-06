@@ -1,0 +1,14 @@
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+coverage
+.tmp
+.sass-cache
+npm-debug.log
+
+**/*.swp
+
+**/*.orig
+**/*.local
