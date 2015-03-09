@@ -17,7 +17,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'keepr.ngOfflineModel'
   ])
   .config(function ($routeProvider) {
     $routeProvider
