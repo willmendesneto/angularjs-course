@@ -2,7 +2,7 @@
   <div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 main-content">
     <h1 class="text-center">Contact List</h1>
 
-    <form autocomplete="off" role="form" novalidate class="form-inline contact-actions clearfix" name="crudOperations" data-ng-submit="contactsCtrl.create(contactsCtrl.contact)" >
+    <form autocomplete="off" role="form" novalidate class="form-inline contact-actions clearfix" name="crudOperations" data-ng-submit="contactsCtrl.save(contactsCtrl.contact)" >
       <fieldset>
         <legend>Insert an item</legend>
         <input type="hidden" data-ng-model="contactsCtrl.contact._id" />

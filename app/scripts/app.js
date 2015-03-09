@@ -33,6 +33,12 @@ angular
         controller: 'ContactsCtrl',
         controllerAs: 'contactsCtrl'
       })
+      .when('/contacts/:id/edit', {
+        templateUrl: 'views/edit.html',
+        controller: 'ContactsCtrl',
+        controllerAs: 'contactsCtrl',
+        method: 'edit'
+      })
       .otherwise({
         redirectTo: '/contacts'
       });
