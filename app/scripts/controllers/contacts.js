@@ -8,10 +8,10 @@
 (function() {
   'use strict';
 
-  function ContactsCtrl($scope, listContacts) {
+  function ContactsCtrl($scope, ContactsService) {
 
     this.init = function(){
-      this.listContacts = listContacts;
+      this.listContacts = this.filteredData = ContactsService.getListItems();
     };
 
     this.init();
@@ -21,6 +21,6 @@
   angular.module('angularjsCourseApp')
     .controller('ContactsCtrl', ContactsCtrl);
 
-  ContactsCtrl.$inject = ['$scope', 'listContacts'];
+  ContactsCtrl.$inject = ['$scope', 'ContactsService'];
 
 }());
