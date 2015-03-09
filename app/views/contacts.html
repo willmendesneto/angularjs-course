@@ -2,8 +2,16 @@
   <div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 main-content">
     <h1 class="text-center">Contact List</h1>
 
+    <form autocomplete="off" role="form">
+      <div class="form-group">
+        <fieldset>
+          <input type="search" name="search" id="search" placeholder="Search..." data-ng-model="contactsCtrl.search" class="form-control" />
+        </fieldset>
+      </div>
+    </form>
+
     <ul class="contact-list" >
-      <li data-ng-repeat="item in contactsCtrl.listContacts track by $index">
+      <li data-ng-repeat="item in contactsCtrl.filteredData = (contactsCtrl.listContacts | filter:contactsCtrl.search) track by $index">
         <div class="first-letter" >
           <span>{{item.name[0]}}</span>
         </div>
