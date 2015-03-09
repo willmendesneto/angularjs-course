@@ -2,7 +2,7 @@
   <div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 main-content">
     <h1 class="text-center">Contact List</h1>
 
-    <form autocomplete="off" role="form" novalidate class="form-inline contact-actions clearfix" name="crudOperations" data-ng-submit="contactsCtrl.create(contactsCtrl.contact)" >
+    <form autocomplete="off" role="form" novalidate class="form-inline contact-actions clearfix" name="crudOperations" data-ng-submit="contactsCtrl.save(contactsCtrl.contact)" >
       <fieldset>
         <legend>Insert an item</legend>
         <input type="hidden" data-ng-model="contactsCtrl.contact._id" />
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="form-group float-label-control col-lg-6 col-md-6 col-sm-6 no-padding-left" data-ng-class="{'has-error': crudOperations.phone.$invalid && crudOperations.phone.$dirty, 'has-success': crudOperations.phone.$valid && crudOperations.phone.$dirty}">
-          <input type="text" name="phone" kp-mask='+99 (99) 9999-9999' kp-placeholder="+99 (99) 9999-9999" data-ng-model="contact.phone" class="form-control" data-ng-class="{empty: contact.phone.length === 0 || contact.phone.length === undefined}" required kp-focus/>
+          <input type="text" name="phone" kp-mask='+99 (99) 9999-9999' kp-placeholder="+99 (99) 9999-9999" data-ng-model="contactsCtrl.contact.phone" class="form-control" data-ng-class="{empty: contactsCtrl.contact.phone.length === 0 || contactsCtrl.contact.phone.length === undefined}" required kp-focus/>
           <div data-ng-if="crudOperations.phone.$invalid && crudOperations.phone.$dirty && !crudOperations.phone.$focused">
             <p class="help-block">
               This field is required
