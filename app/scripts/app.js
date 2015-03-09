@@ -18,16 +18,22 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'keepr.ngOfflineModel'
+    'keepr.ngOfflineModel',
+    'keepr'
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/contacts.html',
+      .when('/contacts', {
+        templateUrl: 'views/index.html',
+        controller: 'ContactsCtrl',
+        controllerAs: 'contactsCtrl'
+      })
+      .when('/contacts/new', {
+        templateUrl: 'views/new.html',
         controller: 'ContactsCtrl',
         controllerAs: 'contactsCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/contacts'
       });
   });
