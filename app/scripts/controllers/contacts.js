@@ -54,6 +54,25 @@
       $location.path('/contacts');
     };
 
+    this.delete = function( index, confirmation ){
+      confirmation = (typeof confirmation !== 'undefined') ? confirmation : true;
+      if (confirmDelete(confirmation)) {
+        var message,
+            item = ContactsService.delete(index)
+          ;
+
+        if (!!item) {
+          this.listContacts = ContactsService.getListItems();
+          return true;
+        }
+        return false;
+      }
+    };
+
+    var confirmDelete = function(confirmation){
+      return confirmation ? $window.confirm('This action is irreversible. Do you want to delete this contact?') : true;
+    };
+
     this.init = function(){
       this.listContacts = this.filteredData = ContactsService.getListItems();
       this.reset();
