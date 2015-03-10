@@ -11,6 +11,11 @@
       </div>
     </form>
 
+    <div class="alert alert-warning fade in col-lg-12 col-md-12 col-sm-12 clearfix" data-ng-repeat="alert in alerts track by $index">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" data-ng-click="contactsCtrl.closeAlertMessage($index)">×</button>
+      {{ alert.msg }}
+    </div>
+
     <ul class="contact-list col-lg-12 col-md-12 col-sm-12 " >
       <li data-ng-repeat="item in contactsCtrl.filteredData = (contactsCtrl.listContacts | filter:contactsCtrl.search) track by $index">
         <div class="first-letter" >
