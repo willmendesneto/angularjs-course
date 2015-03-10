@@ -8,7 +8,11 @@
 (function() {
   'use strict';
 
-  function ContactsCtrl($scope, $location, $window, $routeParams, $route, $filter, ContactsService) {
+  function ContactsCtrl($scope, $location, $window, $routeParams, $route, $filter, $rootScope, AlertService, ContactsService) {
+
+    this.AlertService = AlertService;
+
+    this.alerts = $rootScope.alerts;
 
     this.contact = [];
 
@@ -24,6 +28,7 @@
 
     this.create = function(contact){
       this.listContacts = ContactsService.create(contact);
+      this.AlertService.add('success', 'Contact "' + contact.name + '" created with success!', 5000);
     };
 
     this.edit = function(){
@@ -42,6 +47,7 @@
 
     this.update = function( item ) {
       this.listContacts = ContactsService.update(item);
+      this.AlertService.add('success', 'Contact "' + item.name + '" updated with success!', 5000);
     };
 
     this.save = function(item){
@@ -58,13 +64,14 @@
       confirmation = (typeof confirmation !== 'undefined') ? confirmation : true;
       if (confirmDelete(confirmation)) {
         var message,
-            item = ContactsService.delete(index)
-          ;
-
+            item = ContactsService.delete(index);
         if (!!item) {
+          message = 'Contact "' + item.name + '" was removed of your contact\'s list';
+          this.AlertService.add('success', message, 5000);
           this.listContacts = ContactsService.getListItems();
           return true;
         }
+        this.AlertService.add('error', 'Houston, we have a problem. This operation cannot be executed correctly.', 5000);
         return false;
       }
     };
@@ -89,6 +96,6 @@
   angular.module('angularjsCourseApp')
     .controller('ContactsCtrl', ContactsCtrl);
 
-  ContactsCtrl.$inject = ['$scope', '$location', '$window', '$routeParams', '$route', '$filter', 'ContactsService'];
+  ContactsCtrl.$inject = ['$scope', '$location', '$window', '$routeParams', '$route', '$filter', '$rootScope', 'AlertService', 'ContactsService'];
 
 }());
