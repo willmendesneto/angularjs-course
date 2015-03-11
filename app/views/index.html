@@ -17,7 +17,7 @@
     </div>
 
     <ul class="contact-list col-lg-12 col-md-12 col-sm-12 " >
-      <li data-ng-repeat="item in contactsCtrl.filteredData = (contactsCtrl.listContacts | filter:contactsCtrl.search) track by $index">
+      <li class="contact-list-item" ng-repeat="item in contactsCtrl.filteredData = (contactsCtrl.listContacts | filter:contactsCtrl.search) track by $index">
         <div class="first-letter" >
           <span>{{item.name[0]}}</span>
         </div>

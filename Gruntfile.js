@@ -18,7 +18,8 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    coverage: 'coverage'
   };
 
   // Define the configuration for all the tasks
@@ -106,6 +107,12 @@ module.exports = function (grunt) {
         options: {
           open: true,
           base: '<%= yeoman.dist %>'
+        }
+      },
+      coverage: {
+        options: {
+          open: true,
+          base: '<%= yeoman.coverage %>'
         }
       }
     },
@@ -398,6 +405,8 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
+    } else if (target === 'coverage') {
+      return grunt.task.run(['connect:coverage:keepalive']);
     }
 
     grunt.task.run([

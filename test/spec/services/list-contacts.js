@@ -11,8 +11,9 @@ describe('Service: listContacts', function () {
     listContacts = _listContacts_;
   }));
 
-  it('should do something', function () {
+  it('listContacts have to be created with 6 elements', function () {
     expect(!!listContacts).toBe(true);
+    expect(listContacts.length).toEqual(6);
   });
 
 });
