@@ -472,11 +472,11 @@ module.exports = function (grunt) {
   grunt.registerTask('deploy', 'Deploy application based in environment specs', function (target) {
     target = target || '';
     if (target === 'prod') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      grunt.log.warn('The `deploy:' + target+ '` was called');
     } else if (target === 'staging') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      grunt.log.warn('The `deploy:' + target+ '` was called');
     } else if (target === 'dev'){
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      grunt.log.warn('The `deploy:' + target+ '` was called');
     } else {
       grunt.log.warn('The `deploy:' + target+ '` task doesn\'t exist. Use `grunt -h` for show all available tasks.');
     }
