@@ -462,4 +462,24 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('travis', [
+    'jshint',
+    'test',
+    'build'
+  ]);
+
+  grunt.registerTask('deploy', 'Deploy application based in environment specs', function (target) {
+    target = target || '';
+    if (target === 'prod') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    } else if (target === 'staging') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    } else if (target === 'dev'){
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    } else {
+      grunt.log.warn('The `deploy:' + target+ '` task doesn\'t exist. Use `grunt -h` for show all available tasks.');
+    }
+  });
+
 };
