@@ -39,6 +39,9 @@ describe('Controller: NavbarCtrl', function () {
     it('should return "true" when word starts are the same followed by query string', function () {
       location.path('/contacts?id=1');
       expect(navbarCtrl.isActive('/contacts')).toBeTruthy();
+
+      location.path('/chart?id=1');
+      expect(navbarCtrl.isActive('/chart')).toBeTruthy();
     });
 
   });

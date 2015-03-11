@@ -1,0 +1,66 @@
+<div class="row">
+
+  <div class="chart-content col-lg-12 col-md-12 col-sm-12 " >
+    <p>This module example is based in <a href="https://css-tricks.com/using-angularjs-for-data-visualisations/" target="_blank"><i>Using AngularJS for Data Visualisations</i></a></p>
+
+    <!--bar chart-->
+    <h2>Bar Chart</h2>
+    <div class="chart" style="width:{{chartCtrl.width}}px; height:{{chartCtrl.height}}px;">
+      <h3>{{chartCtrl.xAxis}}</h3>
+      <!-- Labels -->
+
+      <div class="y" style="height:{{chartCtrl.height}}px; margin-left: -30px">
+        <span ng-repeat="number in chartCtrl.numbers" style="position: absolute; margin-right: 10px; font-size: 10px; bottom:{{number}}px;">
+          {{number}}
+        </span>
+
+      </div>
+      <div class="x">
+       <div ng-repeat="bar in chartCtrl.data track by $index">
+         <span style="margin-top:10px; text-align: center; word-wrap: break-word; font-size: 10px; float: left; width:{{chartCtrl.width / chartCtrl.data.length}}px; left:{{$index / chartCtrl.data.length * chartCtrl.width}}px;">
+           {{bar.label}}
+         </span>
+       </div>
+      </div>
+      <!-- Data -->
+       <div ng-repeat="bar in chartCtrl.data track by $index" class="bar" style="height:{{bar.value / chartCtrl.max * chartCtrl.height}}px; width:{{chartCtrl.width / chartCtrl.data.length - 5}}px; left:{{$index / chartCtrl.data.length * chartCtrl.width}}px;" ng-mouseover="chartCtrl.show = $index; chartCtrl.descriptionItem = 1" ng-mouseleave="chartCtrl.show = null; chartCtrl.descriptionItem = 0;">
+         <div ng-if="chartCtrl.show !== null && chartCtrl.show === $index && chartCtrl.descriptionItem === 1">
+           <div class="label">{{bar.label}}<br/>{{bar.value}}</div>
+         </div>
+       </div>
+    </div>
+
+    <!--dot chart-->
+    <h2>Dot Chart</h2>
+    <div class="chart" style="width:{{chartCtrl.width}}px; height:{{chartCtrl.height}}px;">
+      <h3>{{chartCtrl.xAxis}}</h3>
+      <!-- Labels -->
+
+      <div class="y" style="height:{{chartCtrl.height}}px; margin-left: -30px">
+        <span ng-repeat="number in chartCtrl.numbers" style="position: absolute; margin-right: 10px; font-size: 10px; bottom:{{number}}px;">
+          {{number}}
+        </span>
+
+      </div>
+      <div class="x">
+       <div ng-repeat="bar in chartCtrl.data track by $index">
+         <span style="margin-top:10px; text-align: center; word-wrap: break-word; font-size: 10px; float: left; width:{{chartCtrl.width / chartCtrl.data.length}}px; left:{{$index / chartCtrl.data.length * chartCtrl.width}}px;">
+           {{bar.label}}
+         </span>
+       </div>
+      </div>
+      <!-- Data -->
+      <div ng-repeat="dot in chartCtrl.data track by $index" class="dot" style="bottom:{{dot.value / chartCtrl.max * chartCtrl.height}}px; left:{{($index + 0.5) / chartCtrl.data.length * chartCtrl.width}}px;" ng-mouseover="chartCtrl.show = $index;chartCtrl.descriptionItem = 2" ng-mouseleave="chartCtrl.show = null;chartCtrl.descriptionItem = 0">
+         <div ng-if="chartCtrl.show !== null && chartCtrl.show === $index && chartCtrl.descriptionItem === 2">
+           <div class="label">{{dot.label}}<br/>{{dot.value}}</div>
+         </div>
+      </div>
+
+      <div ng-repeat="dot in chartCtrl.data2 track by $index" class="dot-second" style="bottom:{{dot.value / chartCtrl.max * height}}px; left:{{($index + 0.5) / chartCtrl.data2.length * chartCtrl.width}}px;" ng-mouseover="chartCtrl.show = $index;chartCtrl.descriptionItem = 3" ng-mouseleave="chartCtrl.show = null;chartCtrl.descriptionItem = 3">
+        <div ng-if="chartCtrl.show !== null && chartCtrl.show === $index && chartCtrl.descriptionItem === 3">
+          <div class="label">{{dot.label}}<br/>{{dot.value}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

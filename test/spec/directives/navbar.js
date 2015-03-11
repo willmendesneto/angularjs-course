@@ -19,6 +19,7 @@ describe('Directive: navbar', function () {
     template = '<div class="header">' +
       '<ul class="nav nav-pills pull-right">' +
       '  <li ng-class="{active:navbarCtrl.isActive(\'#/contacts\')}"><a ng-href="/#/contacts">Contacts</a></li>' +
+      '  <li ng-class="{active:navbarCtrl.isActive(\'#/chart\')}"><a ng-href="/#/chart">Contacts</a></li>' +
       '</ul>' +
       '<h3 class="text-muted">NAVBAR</h3>' +
     '</div>';

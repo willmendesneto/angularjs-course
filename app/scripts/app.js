@@ -23,6 +23,11 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/chart', {
+        templateUrl: 'views/chart.html',
+        controller: 'ChartCtrl',
+        controllerAs: 'chartCtrl'
+      })
       .when('/contacts', {
         templateUrl: 'views/index.html',
         controller: 'ContactsCtrl',
