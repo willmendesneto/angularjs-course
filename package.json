@@ -41,7 +41,7 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "postinstall": "./node_modules/protractor/bin/webdriver-manager update",
+    "postinstall": "bower install && ./node_modules/protractor/bin/webdriver-manager update",
     "start": "grunt serve",
     "test": "grunt test"
   }
