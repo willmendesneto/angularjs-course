@@ -19,8 +19,23 @@ module.exports = function (grunt) {
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
-    coverage: 'coverage'
+    useSass: false, // If you can't use SASS and COMPASS, please modify this attribute value from "false"
+    coverage: 'coverage',
+    concurrent: {
+      server : [],
+      test : [],
+      dist : [
+        'imagemin',
+        'svgmin'
+      ]
+    }
   };
+  // Sass and Compass verification for use in Gruntfile.js
+  if (appConfig.useSass) {
+    appConfig.concurrent.server = ['compass:server'];
+    appConfig.concurrent.test = ['compass'];
+    appConfig.concurrent.dist.unshift('compass:dist');
+  }
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -192,7 +207,7 @@ module.exports = function (grunt) {
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
-        relativeAssets: false,
+        relativeAssets: true,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
@@ -203,7 +218,7 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          debugInfo: true
+          debugInfo: false
         }
       }
     },
@@ -372,17 +387,9 @@ module.exports = function (grunt) {
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
-      server: [
-        'compass:server'
-      ],
-      test: [
-        'compass'
-      ],
-      dist: [
-        'compass:dist',
-        'imagemin',
-        'svgmin'
-      ]
+      server: appConfig.concurrent.server,
+      test: appConfig.concurrent.test,
+      dist: appConfig.concurrent.dist
     },
 
     // Test settings
@@ -462,4 +469,24 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('travis', [
+    'jshint',
+    'test',
+    'build'
+  ]);
+
+  grunt.registerTask('deploy', 'Deploy application based in environment specs', function (target) {
+    target = target || '';
+    if (target === 'prod') {
+      grunt.log.warn('The `deploy:' + target+ '` was called');
+    } else if (target === 'staging') {
+      grunt.log.warn('The `deploy:' + target+ '` was called');
+    } else if (target === 'dev'){
+      grunt.log.warn('The `deploy:' + target+ '` was called');
+    } else {
+      grunt.log.warn('The `deploy:' + target+ '` task doesn\'t exist. Use `grunt -h` for show all available tasks.');
+    }
+  });
+
 };
