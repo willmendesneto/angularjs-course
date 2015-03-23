@@ -1,0 +1,652 @@
+
+
+/* COLORS */
+/* line 11, ../../app/styles/main.scss */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* line 15, ../../app/styles/main.scss */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Quicksand', 'Helvetica Neue',Helvetica,Arial, sans-serif;
+  font-size: 16px;
+  background: #E7E7E7;
+}
+
+/* line 24, ../../app/styles/main.scss */
+html,
+body,
+legend {
+  color: #666;
+}
+
+/* line 30, ../../app/styles/main.scss */
+iframe, object, embed {
+  max-width: 100%;
+}
+
+/* line 34, ../../app/styles/main.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+/* line 45, ../../app/styles/main.scss */
+.header {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #FFF;
+}
+/* line 51, ../../app/styles/main.scss */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* line 59, ../../app/styles/main.scss */
+.animate-show {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
+
+/* line 67, ../../app/styles/main.scss */
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  transition: all linear 0.5s;
+}
+
+/* line 73, ../../app/styles/main.scss */
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+/* line 79, ../../app/styles/main.scss */
+.btn,
+.form-control {
+  border-radius: 0;
+}
+
+/* line 83, ../../app/styles/main.scss */
+.btn {
+  font-size: 10px;
+}
+
+/* line 86, ../../app/styles/main.scss */
+.btn-add-contact {
+  width: 100%;
+  font-size: 24px !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  outline: 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 99, ../../app/styles/main.scss */
+.form-group[class*="col-lg-"] {
+  padding-left: 0;
+}
+
+/* line 103, ../../app/styles/main.scss */
+.no-padding-left,
+.form-group.no-padding-left[class*="col-lg-"] {
+  padding-left: 0;
+}
+
+/* line 107, ../../app/styles/main.scss */
+.no-padding-right,
+.form-group.no-padding-right[class*="col-lg-"] {
+  padding-right: 0;
+}
+
+/* line 112, ../../app/styles/main.scss */
+.table > thead > tr > th,
+.table > tbody > tr > td {
+  color: #336077;
+}
+
+/* line 117, ../../app/styles/main.scss */
+.btn-success {
+  background: #23A658;
+}
+
+/* line 120, ../../app/styles/main.scss */
+.btn-primary {
+  background: #2DA0D4;
+  color: #FFF;
+}
+
+/* line 93, ../../app/styles/_my-mixins.scss */
+.contact-table-order {
+  cursor: pointer;
+}
+/* line 95, ../../app/styles/_my-mixins.scss */
+.contact-table-order::before {
+  content: "\f106";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  float: right;
+  float: right;
+  position: relative;
+  margin-top: -5px;
+  margin-right: 5px;
+}
+/* line 106, ../../app/styles/_my-mixins.scss */
+.contact-table-order::after {
+  content: "\f107";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  float: right;
+  margin-top: 3px;
+  margin-right: -10px;
+  margin-bottom: -3px;
+}
+/* line 116, ../../app/styles/_my-mixins.scss */
+.contact-table-order.asc::after, .contact-table-order.desc::after {
+  margin-top: 0;
+  margin-right: 5px;
+}
+/* line 121, ../../app/styles/_my-mixins.scss */
+.contact-table-order.asc::after {
+  content: "\f106";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+}
+/* line 127, ../../app/styles/_my-mixins.scss */
+.contact-table-order.asc::before {
+  content: " ";
+}
+/* line 130, ../../app/styles/_my-mixins.scss */
+.contact-table-order.desc::after {
+  content: "\f107";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+}
+/* line 136, ../../app/styles/_my-mixins.scss */
+.contact-table-order.desc::before {
+  content: " ";
+}
+
+/* line 3, ../../app/styles/_my-mixins.scss */
+form.contact-actions {
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+/* line 6, ../../app/styles/_my-mixins.scss */
+form.contact-actions legend {
+  color: #2DA0D4;
+  font-weight: 700;
+}
+/* line 10, ../../app/styles/_my-mixins.scss */
+form.contact-actions a,
+form.contact-actions input[type="color"],
+form.contact-actions input[type="email"],
+form.contact-actions input[type="password"],
+form.contact-actions input[type="search"],
+form.contact-actions input[type="tel"],
+form.contact-actions input[type="text"],
+form.contact-actions input[type="url"],
+form.contact-actions input[type="number"],
+form.contact-actions input[type="date"],
+form.contact-actions input[type="time"],
+form.contact-actions input[type="datetime"],
+form.contact-actions input[type="datetime-local"],
+form.contact-actions input[type="week"],
+form.contact-actions input[type="month"] {
+  width: 100%;
+  margin: 0;
+  padding: 5px 10px;
+  background: #F8F8F8;
+  border: 0;
+  border-bottom: 1px solid #CCC;
+  outline: 0;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: #5E5E5E;
+  outline: 0;
+}
+/* line 40, ../../app/styles/_my-mixins.scss */
+form.contact-actions a {
+  background: #E92429;
+  color: #FFF;
+}
+/* line 45, ../../app/styles/_my-mixins.scss */
+form.contact-actions input[type="date"] ::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+/* line 49, ../../app/styles/_my-mixins.scss */
+form.contact-actions input[type="date"] ::-moz-inner-spin-button {
+  -moz-appearance: none;
+  display: none;
+}
+/* line 53, ../../app/styles/_my-mixins.scss */
+form.contact-actions input[type="date"] ::-o-inner-spin-button {
+  -o-appearance: none;
+  display: none;
+}
+/* line 57, ../../app/styles/_my-mixins.scss */
+form.contact-actions input[type="date"] ::-ms-inner-spin-button {
+  -ms-appearance: none;
+  display: none;
+}
+/* line 61, ../../app/styles/_my-mixins.scss */
+form.contact-actions input[type="date"] ::inner-spin-button {
+  appearance: none;
+  display: none;
+}
+/* line 67, ../../app/styles/_my-mixins.scss */
+form.contact-actions input[type="submit"], form.contact-actions a {
+  width: 100%;
+  font-size: 24px !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 16px;
+  outline: 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+/* line 78, ../../app/styles/_my-mixins.scss */
+form.contact-actions input[type="submit"]:hover, form.contact-actions a:hover {
+  transition: background-color 0.5s ease;
+}
+/* line 82, ../../app/styles/_my-mixins.scss */
+form.contact-actions label,
+form.contact-actions a {
+  font-size: 12px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+/* line 143, ../../app/styles/_my-mixins.scss */
+.btn-outline, a.btn-outline {
+  color: #FFF;
+  transition: all .5s;
+  box-shadow: inset 0 1px 2px #8d8d8d;
+  transition: all 1s;
+}
+/* line 149, ../../app/styles/_my-mixins.scss */
+.btn-outline.btn-primary:hover, a.btn-outline.btn-primary:hover {
+  color: #428bca;
+}
+/* line 153, ../../app/styles/_my-mixins.scss */
+.btn-outline.btn-success:hover, a.btn-outline.btn-success:hover {
+  color: #5cb85c;
+}
+/* line 157, ../../app/styles/_my-mixins.scss */
+.btn-outline.btn-info:hover, a.btn-outline.btn-info:hover {
+  color: #5bc0de;
+}
+/* line 161, ../../app/styles/_my-mixins.scss */
+.btn-outline.btn-warning:hover, a.btn-outline.btn-warning:hover {
+  color: #f0ad4e;
+}
+/* line 165, ../../app/styles/_my-mixins.scss */
+.btn-outline.btn-danger:hover, a.btn-outline.btn-danger:hover {
+  color: #d9534f;
+}
+/* line 169, ../../app/styles/_my-mixins.scss */
+.btn-outline.btn-primary:hover, .btn-outline.btn-success:hover, .btn-outline.btn-info:hover, .btn-outline.btn-warning:hover, .btn-outline.btn-danger:hover, a.btn-outline.btn-primary:hover, a.btn-outline.btn-success:hover, a.btn-outline.btn-info:hover, a.btn-outline.btn-warning:hover, a.btn-outline.btn-danger:hover {
+  background-color: transparent;
+  box-shadow: 0px 10px #333333;
+}
+
+/* line 182, ../../app/styles/_my-mixins.scss */
+.contact-list {
+  list-style: none;
+  font-family: 'Lato', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 188, ../../app/styles/_my-mixins.scss */
+.contact-list > li {
+  background-color: white;
+  box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+  padding: 0px;
+  margin: 0px 0px 20px;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 125px;
+  padding: 0px;
+}
+
+/* line 200, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .first-letter {
+  display: inline-block;
+  width: 100%;
+  color: white;
+  background-color: #c52c66;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 209, ../../app/styles/_my-mixins.scss */
+.contact-list > li:nth-child(even) > .first-letter {
+  background-color: #a552a7;
+}
+
+/* line 212, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .first-letter > span {
+  display: block;
+  font-size: 100px;
+  font-weight: 100;
+  line-height: 1;
+}
+
+/* line 218, ../../app/styles/_my-mixins.scss */
+.contact-list > li > img {
+  width: 100%;
+}
+
+/* line 221, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info {
+  padding-top: 5px;
+  text-align: center;
+  background-color: whitesmoke;
+  overflow: hidden;
+  position: relative;
+  height: 125px;
+  text-align: left;
+}
+
+/* line 230, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > .title {
+  font-size: 17pt;
+  font-weight: 300;
+  margin: 0px;
+}
+
+/* line 235, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > .desc {
+  font-size: 13pt;
+  font-weight: 300;
+  margin: 0px;
+}
+
+/* line 240, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > ul {
+  display: table;
+  list-style: none;
+  margin: 10px 0px 0px;
+  padding: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 248, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > ul > li {
+  display: table-cell;
+  cursor: pointer;
+  color: #1e1e1e;
+  font-size: 11pt;
+  font-weight: 300;
+  padding: 3px 0px;
+}
+
+/* line 256, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > ul > li > a {
+  display: block;
+  width: 100%;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+/* line 262, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > ul > li:hover {
+  color: #1e1e1e;
+  background-color: #c8c8c8;
+}
+
+/* line 266, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .first-letter,
+.contact-list > li > img {
+  display: inline-block;
+  float: left;
+  width: 125px;
+  height: 125px;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 275, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > .title,
+.contact-list > li > .info > .desc {
+  padding: 0px 10px;
+}
+
+/* line 279, ../../app/styles/_my-mixins.scss */
+.contact-list > li > .info > ul {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* line 131, ../../app/styles/main.scss */
+.main-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgb(255, 255, 255);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(204, 204, 204);
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  box-shadow: rgb(102, 102, 102) 0px 15px 6px -6px;
+}
+
+/* line 140, ../../app/styles/main.scss */
+.bg-blue {
+  background: #2DA0D4;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 768px) {
+  /* line 146, ../../app/styles/main.scss */
+  .container {
+    max-width: 730px;
+  }
+}
+
+/* Space out content a bit */
+body {
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+
+// Chart set up
+.chart-content{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #FFF;
+}
+.chart-header{
+  border-top: #E7E7E7;
+  height: 40px;
+  border-bottom: #E7E7E7;
+}
+
+.chart {
+  border-left:1px solid #E7E7E7;
+  border-bottom:1px solid #E7E7E7;
+  margin:60px auto;
+  position:relative;
+}
+
+.y {
+  position:absolute;
+  bottom:0;
+  padding:5px;
+}
+
+.x {
+  position:absolute;
+  top:100%;
+  width:100%;
+  padding:5px;
+}
+
+// Bar Chart
+
+.bar  {
+  background: #3E50B4;
+  position:absolute;
+  bottom:0;
+
+  &:nth-of-type(even) {
+    background: #009587;
+  }
+}
+
+
+
+// Dot chart
+
+.dot, .dot-second {
+  background: #3E50B4;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  position:absolute;
+}
+
+.dot-second {
+  background: #009587;
+}
+
+// SVG line chart
+svg {
+  position:absolute;
+  transform:rotateX(180deg);
+  left:0;
+}
+
+line  {
+  stroke: #3E50B4;
+  stroke-width:3px;
+}
+
+// Commons
+
+.label {
+  position: absolute;
+  top: -2px;
+  opacity: .8;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 100;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #888888;
+}
