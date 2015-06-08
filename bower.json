@@ -21,5 +21,8 @@
     "ng-offline-model": "*",
     "angular-keepr": "~0.0.1"
   },
-  "appPath": "app"
+  "appPath": "app",
+  "resolutions": {
+    "angular": "1.4.0"
+  }
 }
