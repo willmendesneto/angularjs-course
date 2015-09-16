@@ -99,7 +99,6 @@ h6 {
   outline: 0;
   cursor: pointer;
   letter-spacing: 1px;
-  -webkit-appearance: button;
   cursor: pointer;
 }
 
@@ -294,30 +293,30 @@ form.contact-actions a {
   transition: all 1s;
 }
 /* line 149, ../../app/styles/_my-mixins.scss */
-.btn-outline.btn-primary:hover, a.btn-outline.btn-primary:hover {
+/* .btn-outline.btn-primary:hover, a.btn-outline.btn-primary:hover {
   color: #428bca;
 }
-/* line 153, ../../app/styles/_my-mixins.scss */
+line 153, ../../app/styles/_my-mixins.scss
 .btn-outline.btn-success:hover, a.btn-outline.btn-success:hover {
   color: #5cb85c;
 }
-/* line 157, ../../app/styles/_my-mixins.scss */
+line 157, ../../app/styles/_my-mixins.scss
 .btn-outline.btn-info:hover, a.btn-outline.btn-info:hover {
   color: #5bc0de;
 }
-/* line 161, ../../app/styles/_my-mixins.scss */
+line 161, ../../app/styles/_my-mixins.scss
 .btn-outline.btn-warning:hover, a.btn-outline.btn-warning:hover {
   color: #f0ad4e;
 }
-/* line 165, ../../app/styles/_my-mixins.scss */
+line 165, ../../app/styles/_my-mixins.scss
 .btn-outline.btn-danger:hover, a.btn-outline.btn-danger:hover {
   color: #d9534f;
 }
-/* line 169, ../../app/styles/_my-mixins.scss */
+line 169, ../../app/styles/_my-mixins.scss
 .btn-outline.btn-primary:hover, .btn-outline.btn-success:hover, .btn-outline.btn-info:hover, .btn-outline.btn-warning:hover, .btn-outline.btn-danger:hover, a.btn-outline.btn-primary:hover, a.btn-outline.btn-success:hover, a.btn-outline.btn-info:hover, a.btn-outline.btn-warning:hover, a.btn-outline.btn-danger:hover {
   background-color: transparent;
   box-shadow: 0px 10px #333333;
-}
+} */
 
 /* line 182, ../../app/styles/_my-mixins.scss */
 .contact-list {
